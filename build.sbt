@@ -32,7 +32,7 @@ lazy val commons = Seq(
       "-Ywarn-dead-code",
       "-Ywarn-numeric-widen",
       "-Xfuture")
-  
+
     // WORKAROUND https://github.com/scala/scala/pull/5402
     CrossVersion.partialVersion(scalaVersion.value) match {
       case Some((2, 12)) => options.map {
@@ -73,5 +73,6 @@ lazy val joda = project.in(file("ext-joda-time"))
 lazy val root = project.in(file("."))
   .aggregate(core, joda)
   .settings(
+    commons,
     name := "scalax-range-root",
     aggregate in update := false)
