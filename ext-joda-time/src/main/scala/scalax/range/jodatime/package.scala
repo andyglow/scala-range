@@ -7,6 +7,11 @@ import scala.concurrent.duration.FiniteDuration
 
 package object jodatime {
 
+  implicit val jodaInstantOrd: Ordering[Instant] = Ordering fromLessThan { _.compareTo(_) > 0 }
+  implicit val jodaLocalDateOrd: Ordering[LocalDate] = Ordering fromLessThan { _.compareTo(_) > 0 }
+  implicit val jodaLocalTimeOrd: Ordering[LocalTime] = Ordering fromLessThan { _.compareTo(_) > 0 }
+  implicit val jodaDateTimeOrd: Ordering[DateTime] = Ordering fromLessThan { _.compareTo(_) > 0 }
+
   // org.joda.time.Instant
   implicit val jodaInstantFinDurStepper: Stepper[Instant, FiniteDuration] = InstantStepper.finDur
   implicit val jodaInstantJtDurStepper: Stepper[Instant, java.time.Duration] = InstantStepper.jtDur
