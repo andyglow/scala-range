@@ -43,7 +43,7 @@ lazy val commons = Seq(
       case _             => options
     }
   },
-  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % Test,
+  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test,
   releaseProcess := Seq[ReleaseStep](
     checkSnapshotDependencies,
     inquireVersions,
