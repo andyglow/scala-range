@@ -1,6 +1,6 @@
 package scalax.range.date
 
-import org.scalatest.Matchers._
+import matchers.should.Matchers._
 import org.scalatest._
 
 import scalax.range._
@@ -8,9 +8,11 @@ import scalax.range._
 import java.util.Date
 import java.time.{Duration => JDuration, _}
 import scala.concurrent.duration._
+import org.scalatest.matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 
-class DateDslSpec extends WordSpec {
+class DateDslSpec extends AnyWordSpec {
 
   "date dsl" when {
     "java.util.Date" when {
