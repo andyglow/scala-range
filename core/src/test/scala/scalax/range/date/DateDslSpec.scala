@@ -1,15 +1,12 @@
 package scalax.range.date
 
-import matchers.should.Matchers._
-import org.scalatest._
-
 import scalax.range._
-
 import java.util.Date
 import java.time.{Duration => JDuration, _}
 import scala.concurrent.duration._
-import org.scalatest.matchers
+
 import org.scalatest.wordspec.AnyWordSpec
+import org.scalatest.matchers.should.Matchers._
 
 
 class DateDslSpec extends AnyWordSpec {

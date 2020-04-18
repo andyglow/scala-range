@@ -1,6 +1,6 @@
 package scalax.range
 
-import RangeBuilder._
+import scalax.range.RangeBuilder._
 
 
 class RangeIterator[T, S](

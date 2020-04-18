@@ -1,13 +1,10 @@
 package scalax.range.jodatime
 
-import org.scalatest._
-import matchers.should.Matchers._
 import scalax.range._
-
 import java.time.{Duration => JDuration}
 import org.joda.time.{Duration => JodaDuration, _}
 import scala.concurrent.duration._
-import org.scalatest.matchers
+import org.scalatest.matchers.should.Matchers._
 import org.scalatest.wordspec.AnyWordSpec
 
 

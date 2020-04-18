@@ -1,8 +1,6 @@
 package scalax.range
 
-import org.scalatest._
-import matchers.should.Matchers._
-import org.scalatest.matchers
+import org.scalatest.matchers.should.Matchers._
 import org.scalatest.wordspec.AnyWordSpec
 
 
@@ -23,7 +21,7 @@ class ExcIncSpec extends AnyWordSpec {
     }
 
     "be reflected from both sides (empty)" in {
-      (exclusive(0) until 1 by 1).toList shouldBe 'empty
+      (exclusive(0) until 1 by 1).toList shouldBe Symbol("empty")
     }
   }
 }

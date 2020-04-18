@@ -1,7 +1,8 @@
 import xerial.sbt.Sonatype._
 import ReleaseTransformations._
 
-lazy val scala212 = "2.12.8"
+lazy val scala213 = "2.13.1"
+lazy val scala212 = "2.12.10"
 lazy val scala211 = "2.11.12"
 
 lazy val commons = Seq(
@@ -10,7 +11,7 @@ lazy val commons = Seq(
   scalaVersion            := scala211,
   publishMavenStyle       := true,
   publishArtifact         := true,
-  crossScalaVersions      := List(scala212, scala211),
+  crossScalaVersions      := List(scala213, scala212, scala211),
   homepage                := Some(new URL("http://github.com/andyglow/scala-range")),
   startYear               := Some(2019),
   organizationName        := "andyglow",
@@ -37,9 +38,15 @@ lazy val commons = Seq(
     CrossVersion.partialVersion(scalaVersion.value) match {
       case Some((2, 12)) => options.map {
         case "-Xlint"               => "-Xlint:-unused,_"
-        case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-params,-implicits"
+        case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-implicits"
         case other                  => other
       }
+      case Some((2, n)) if n >= 13  => options.filterNot { opt =>
+        opt == "-Yno-adapted-args" || opt == "-Xfuture"
+      }.map {
+        case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-implicits"
+        case other                  => other
+      } :+ "-Xsource:2.13"
       case _             => options
     }
   },

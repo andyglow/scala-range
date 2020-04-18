@@ -1,8 +1,8 @@
 package scalax.range.jodatime
 
 import org.joda.time.Instant
-import scalax.range.date._
 import scalax.range.Stepper
+import scalax.range.date._
 
 import scala.concurrent.duration._
 
