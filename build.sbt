@@ -82,4 +82,7 @@ lazy val root = project.in(file("."))
   .settings(
     commons,
     name := "scalax-range-root",
+    crossScalaVersions := Nil,
+    publish / skip := true,
+    publishArtifact := false,
     aggregate in update := false)

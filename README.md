@@ -93,3 +93,8 @@ Basically the numeric will get converted into `Long` and then this long gets tre
 - `org.joda.time.LocalDate` (num is days)
 - `org.joda.time.LocalTime` (num is minutes)
 - `org.joda.time.DateTime` (num is hours)
+
+TODO:
+- add support for
+  - [ ] https://github.com/typelevel/squants
+  - [ ] https://github.com/typelevel/spire
