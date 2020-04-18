@@ -1,10 +1,12 @@
 package scalax.range
 
 import org.scalatest._
-import org.scalatest.Matchers._
+import matchers.should.Matchers._
+import org.scalatest.matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 
-class DslSpec extends WordSpec {
+class DslSpec extends AnyWordSpec {
 
   "dsl" when {
     // works with all Numeric members (BigDecimal, BugInteger, Char, ...)

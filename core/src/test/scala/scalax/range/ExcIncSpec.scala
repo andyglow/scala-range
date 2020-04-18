@@ -1,10 +1,12 @@
 package scalax.range
 
 import org.scalatest._
-import org.scalatest.Matchers._
+import matchers.should.Matchers._
+import org.scalatest.matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 
-class ExcIncSpec extends WordSpec {
+class ExcIncSpec extends AnyWordSpec {
 
   "Inclusiveness" should {
 

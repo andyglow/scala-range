@@ -1,15 +1,17 @@
 package scalax.range.jodatime
 
 import org.scalatest._
-import org.scalatest.Matchers._
+import matchers.should.Matchers._
 import scalax.range._
 
 import java.time.{Duration => JDuration}
 import org.joda.time.{Duration => JodaDuration, _}
 import scala.concurrent.duration._
+import org.scalatest.matchers
+import org.scalatest.wordspec.AnyWordSpec
 
 
-class JodaDslSpec extends WordSpec {
+class JodaDslSpec extends AnyWordSpec {
 
   "jodatime dsl" when {
     "org.joda.time.Instant" when {
