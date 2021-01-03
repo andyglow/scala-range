@@ -1,17 +1,11 @@
 import xerial.sbt.Sonatype._
 import ReleaseTransformations._
 
-lazy val scala213 = "2.13.1"
-lazy val scala212 = "2.12.10"
-lazy val scala211 = "2.11.12"
-
-lazy val commons = Seq(
+lazy val commons = ScalaVer.settings ++ Seq(
   organization            := "com.github.andyglow",
   releaseCrossBuild       := true,
-  scalaVersion            := scala211,
   publishMavenStyle       := true,
   publishArtifact         := true,
-  crossScalaVersions      := List(scala213, scala212, scala211),
   homepage                := Some(new URL("http://github.com/andyglow/scala-range")),
   startYear               := Some(2019),
   organizationName        := "andyglow",
