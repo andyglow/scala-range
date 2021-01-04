@@ -30,11 +30,11 @@ class DslSpec extends AnyWordSpec {
       "compile to"              in { "exclusive(1) to exclusive(5) by 1" should compile }
     }
     "long/long" should {
-      "compile inclusive to"    in { "inclusive(1l) to 5l by 1l" should compile }
-      "compile exclusive to"    in { "exclusive(1l) to 5l by 1l" should compile }
-      "compile inclusive until" in { "inclusive(1l) to 5l by 1l" should compile }
-      "compile exclusive until" in { "exclusive(1l) to 5l by 1l" should compile }
-      "compile to"              in { "exclusive(1l) to exclusive(5l) by 1l" should compile }
+      "compile inclusive to"    in { "inclusive(1L) to 5L by 1L" should compile }
+      "compile exclusive to"    in { "exclusive(1L) to 5L by 1L" should compile }
+      "compile inclusive until" in { "inclusive(1L) to 5L by 1L" should compile }
+      "compile exclusive until" in { "exclusive(1L) to 5L by 1L" should compile }
+      "compile to"              in { "exclusive(1L) to exclusive(5L) by 1L" should compile }
     }
     "double/double" should {
       "compile inclusive to"    in { "inclusive(1.5) to 7.82 by 1.5" should compile }

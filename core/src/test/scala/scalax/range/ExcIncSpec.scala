@@ -17,7 +17,7 @@ class ExcIncSpec extends AnyWordSpec {
     }
 
     "be reflected from both sides" in {
-      (inclusive(0) to 1 by 1).toList should contain inOrder(0, 1)
+      (inclusive(0) to 1 by 1).toList should contain inOrder (0, 1)
     }
 
     "be reflected from both sides (empty)" in {

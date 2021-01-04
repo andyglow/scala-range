@@ -1,5 +1,6 @@
 import xerial.sbt.Sonatype._
 import ReleaseTransformations._
+import ScalaVer._
 
 lazy val commons = ScalaVer.settings ++ Seq(
   organization            := "com.github.andyglow",
@@ -15,35 +16,7 @@ lazy val commons = ScalaVer.settings ++ Seq(
   sonatypeProjectHosting  := Some(GitHubHosting("andyglow", "scala-range", "andyglow@gmail.com")),
   scmInfo                 := Some(ScmInfo(url("https://github.com/andyglow/scala-range"), "scm:git@github.com:andyglow/scala-range.git")),
   developers              := List(Developer(id = "andyglow", name = "Andriy Onyshchuk", email = "andyglow@gmail.com", url = url("https://ua.linkedin.com/in/andyglow"))),
-  scalacOptions ++= {
-    val options = Seq(
-      "-encoding", "UTF-8",
-      "-feature",
-      "-unchecked",
-      "-deprecation",
-      "-Xfatal-warnings",
-      "-Xlint",
-      "-Yno-adapted-args",
-      "-Ywarn-dead-code",
-      "-Ywarn-numeric-widen",
-      "-Xfuture")
-
-    // WORKAROUND https://github.com/scala/scala/pull/5402
-    CrossVersion.partialVersion(scalaVersion.value) match {
-      case Some((2, 12)) => options.map {
-        case "-Xlint"               => "-Xlint:-unused,_"
-        case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-implicits"
-        case other                  => other
-      }
-      case Some((2, n)) if n >= 13  => options.filterNot { opt =>
-        opt == "-Yno-adapted-args" || opt == "-Xfuture"
-      }.map {
-        case "-Ywarn-unused-import" => "-Ywarn-unused:imports,-patvars,-privates,-locals,-implicits"
-        case other                  => other
-      } :+ "-Xsource:2.13"
-      case _             => options
-    }
-  },
+  scalacOptions           := CompilerOptions(scalaV.value),
   libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.3" % Test,
   releaseProcess := Seq[ReleaseStep](
     checkSnapshotDependencies,
@@ -64,7 +37,7 @@ lazy val core = project.in(file("core"))
     commons,
     name := "scalax-range")
 
-lazy val joda = project.in(file("ext-joda-time"))
+lazy val joda = project.in(file("modules/joda-time"))
   .dependsOn(core)
   .settings(
     commons,
