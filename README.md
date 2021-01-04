@@ -1,8 +1,7 @@
 # scala-range
-[![Build Status](https://travis-ci.org/andyglow/scala-range.svg)](https://travis-ci.org/andyglow/scala-range)
-![Maven Central 2.11](https://img.shields.io/maven-central/v/com.github.andyglow/scalax-range_2.11.svg)
-![Maven Central 2.12](https://img.shields.io/maven-central/v/com.github.andyglow/scalax-range_2.12.svg)
-[![Coverage Status](https://coveralls.io/repos/github/andyglow/scala-range/badge.svg?branch=master)](https://coveralls.io/github/andyglow/scala-range?branch=master)
+[![Build Status](https://cloud.drone.io/api/badges/andyglow/scala-range/status.svg)](https://cloud.drone.io/andyglow/scala-range)
+[![codecov](https://codecov.io/gh/andyglow/scala-range/branch/master/graph/badge.svg?token=3674BUQYDA)](https://codecov.io/gh/andyglow/scala-range)
+[![mvn](https://img.shields.io/badge/dynamic/json.svg?label=mvn&query=%24.response.docs%5B0%5D.latestVersion&url=https%3A%2F%2Fsearch.maven.org%2Fsolrsearch%2Fselect%3Fq%3Dscalax-range_2.13%26start%3D0%26rows%3D1)](https://search.maven.org/artifact/com.github.andyglow/scalax-range_2.13/)
 
 Install
 ```scala
