@@ -17,7 +17,7 @@ lazy val commons = ScalaVer.settings ++ Seq(
   scmInfo                 := Some(ScmInfo(url("https://github.com/andyglow/scala-range"), "scm:git@github.com:andyglow/scala-range.git")),
   developers              := List(Developer(id = "andyglow", name = "Andriy Onyshchuk", email = "andyglow@gmail.com", url = url("https://ua.linkedin.com/in/andyglow"))),
   scalacOptions           := CompilerOptions(scalaV.value),
-  libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.8" % Test,
+  libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.9" % Test,
   releaseProcess := Seq[ReleaseStep](
     checkSnapshotDependencies,
     inquireVersions,
