@@ -8,7 +8,7 @@ trait RangeBuilder[+T] {
 
 object RangeBuilder {
 
-  case class NonEmpty[T: Ordering] private (
+  case class NonEmpty[T: Ordering] private[RangeBuilder] (
     from: Endpoint[T],
     to: Endpoint[T]) extends RangeBuilder[T] {
 
