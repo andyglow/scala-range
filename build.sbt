@@ -42,7 +42,7 @@ lazy val joda = project.in(file("modules/joda-time"))
   .settings(
     commons,
     name := "scalax-range-joda-time",
-    libraryDependencies += "joda-time" % "joda-time" % "2.10.10")
+    libraryDependencies += "joda-time" % "joda-time" % "2.10.11")
 
 lazy val root = project.in(file("."))
   .aggregate(core, joda)
