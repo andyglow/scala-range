@@ -10,24 +10,16 @@ class RangeIterator[T, S](
   import ord._
   import stepper._
 
-  println(s"RangeIterator($from, $to, $step)")
-
   private var pointer: T = if (from.inclusive) from.point else from.point + step
 
-  override def hasNext: Boolean = {
-
-    val res = if (to.inclusive) pointer <= to.point else pointer < to.point
-    println(s"RangeIterator.hasNext: $pointer, (${to.inclusive}) ${to.point}: $res")
-    res
-  }
+  override def hasNext: Boolean =
+    if (to.inclusive) pointer <= to.point else pointer < to.point
 
   override def next(): T = {
     if (!hasNext) throw new NoSuchElementException("next on empty iterator")
 
     val e = pointer
     pointer += step
-
-    println(s"RangeIterator.next: was ($e) became (${pointer})")
 
     e
   }
