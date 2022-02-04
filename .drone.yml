@@ -203,7 +203,7 @@
             "sbt coverageAggregate",
             "curl -Os https://uploader.codecov.io/latest/alpine/codecov",
             "chmod +x codecov",
-            "./codecov -t ${CODECOV_TOKEN}",
+            "./codecov -t ${CODECOV_TOKEN}"
          ],
          "environment": {
             "CODECOV_TOKEN": {
