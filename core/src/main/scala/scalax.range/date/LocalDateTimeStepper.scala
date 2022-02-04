@@ -12,7 +12,7 @@ private[range] class LocalDateTimeStepper[S](toNanos: S => Long) extends Stepper
   def plus(t: jt.LocalDateTime, s: S): jt.LocalDateTime = t.plusNanos(toNanos(s))
 }
 
-private[range] object LocalDateTimeStepper extends NanoStepper[jt.LocalDateTime](_.hours) {
+private[range] object LocalDateTimeStepper extends NanoStepper[jt.LocalDateTime](_.seconds) {
 
   override def newStepper[S](toSubj: S => Long): Stepper[jt.LocalDateTime, S] = new LocalDateTimeStepper(toSubj)
 }

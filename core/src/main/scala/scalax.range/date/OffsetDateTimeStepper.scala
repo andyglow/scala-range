@@ -12,7 +12,7 @@ private[range] class OffsetDateTimeStepper[S](toNanos: S => Long) extends Steppe
   def plus(t: jt.OffsetDateTime, s: S): jt.OffsetDateTime = t.plusNanos(toNanos(s))
 }
 
-private[range] object OffsetDateTimeStepper extends NanoStepper[jt.OffsetDateTime](_.hours) {
+private[range] object OffsetDateTimeStepper extends NanoStepper[jt.OffsetDateTime](_.seconds) {
 
   override def newStepper[S](toSubj: S => Long): Stepper[jt.OffsetDateTime, S] = new OffsetDateTimeStepper(toSubj)
 }

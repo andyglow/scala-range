@@ -12,7 +12,7 @@ private[range] class ZonedDateTimeStepper[S](toNanos: S => Long) extends Stepper
   def plus(t: jt.ZonedDateTime, s: S): jt.ZonedDateTime = t.plusNanos(toNanos(s))
 }
 
-private[range] object ZonedDateTimeStepper extends NanoStepper[jt.ZonedDateTime](_.hours) {
+private[range] object ZonedDateTimeStepper extends NanoStepper[jt.ZonedDateTime](_.seconds) {
 
   override def newStepper[S](toSubj: S => Long): Stepper[jt.ZonedDateTime, S] = new ZonedDateTimeStepper(toSubj)
 }
